@@ -1,0 +1,250 @@
+{
+    "verbose": 1,
+    "cwd": "/home/ubuntu/",
+    "master_systems_dir": "/home/ubuntu/workspace/",
+    "master_systems_dir_relative": "workspace/",
+    "project_name": "Task",
+    "project_dir": "/home/ubuntu/workspace/Task/",
+    "project_dir_relative": "workspace/Task/",
+    "experiment_name": "gluon_resnet18_v1_train_all_layers",
+    "experiment_dir": "/home/ubuntu/workspace/Task/gluon_resnet18_v1_train_all_layers/",
+    "experiment_dir_relative": "workspace/Task/gluon_resnet18_v1_train_all_layers/",
+    "origin": [
+        "New",
+        "New"
+    ],
+    "master_comparison_dir": "/home/ubuntu/workspace/comparison/",
+    "master_comparison_dir_relative": "workspace/comparison/",
+    "library": "Mxnet",
+    "output_dir": "/home/ubuntu/workspace/Task/gluon_resnet18_v1_train_all_layers/output/",
+    "output_dir_relative": "workspace/Task/gluon_resnet18_v1_train_all_layers/output/",
+    "model_dir": "/home/ubuntu/workspace/Task/gluon_resnet18_v1_train_all_layers/output/models/",
+    "model_dir_relative": "workspace/Task/gluon_resnet18_v1_train_all_layers/output/models/",
+    "log_dir": "/home/ubuntu/workspace/Task/gluon_resnet18_v1_train_all_layers/output/logs/",
+    "log_dir_relative": "workspace/Task/gluon_resnet18_v1_train_all_layers/output/logs/",
+    "fname": "/home/ubuntu/workspace/Task/gluon_resnet18_v1_train_all_layers//experiment_state.json",
+    "fname_relative": "workspace/Task/gluon_resnet18_v1_train_all_layers//experiment_state.json",
+    "dataset": {
+        "dataset_type": "train",
+        "label_type": "single",
+        "train_path": "Train",
+        "val_path": null,
+        "csv_train": null,
+        "csv_val": null,
+        "test_path": false,
+        "csv_test": false,
+        "params": {
+            "input_size": 224,
+            "data_shape": false,
+            "batch_size": 4,
+            "train_shuffle": true,
+            "num_workers": 8,
+            "weighted_sample": false,
+            "num_classes": 7,
+            "classes": [
+                "Exterior",
+                "Interior",
+                "bathroom",
+                "bedroom",
+                "dining_room",
+                "kitchen",
+                "living_room"
+            ],
+            "num_train_images": 101805,
+            "num_val_images": 43631,
+            "num_test_images": false,
+            "delimiter": ",",
+            "test_delimiter": ",",
+            "dataset_test_type": false,
+            "train_val_split": 0.7,
+            "val_shuffle": true
+        },
+        "transforms": {
+            "train": [
+                {
+                    "RandomHorizontalFlip": {
+                        "p": 0.8
+                    }
+                },
+                {
+                    "Normalize": {
+                        "mean": [
+                            0.485,
+                            0.456,
+                            0.406
+                        ],
+                        "std": [
+                            0.229,
+                            0.224,
+                            0.225
+                        ]
+                    }
+                }
+            ],
+            "val": [
+                {
+                    "RandomHorizontalFlip": {
+                        "p": 0.8
+                    }
+                },
+                {
+                    "Normalize": {
+                        "mean": [
+                            0.485,
+                            0.456,
+                            0.406
+                        ],
+                        "std": [
+                            0.229,
+                            0.224,
+                            0.225
+                        ]
+                    }
+                }
+            ],
+            "test": [
+                {
+                    "Normalize": {
+                        "mean": [
+                            0.485,
+                            0.456,
+                            0.406
+                        ],
+                        "std": [
+                            0.229,
+                            0.224,
+                            0.225
+                        ]
+                    }
+                }
+            ]
+        },
+        "status": true
+    },
+    "model": {
+        "status": true,
+        "final_layer": false,
+        "type": "pretrained",
+        "custom_network": [],
+        "params": {
+            "model_name": "resnet18_v1",
+            "model_path": false,
+            "use_gpu": true,
+            "use_pretrained": true,
+            "freeze_base_network": false,
+            "num_layers": 41,
+            "num_params_to_update": 41,
+            "num_freeze": false,
+            "gpu_memory_fraction": 0.6
+        }
+    },
+    "custom_model": {
+        "status": false,
+        "network_stack": [],
+        "network_initializer": false
+    },
+    "hyper-parameters": {
+        "status": true,
+        "learning_rate": 0.01,
+        "num_epochs": 10,
+        "optimizer": {
+            "name": "sgd",
+            "params": {
+                "lr": 0.01,
+                "momentum": 0,
+                "weight_decay": 0,
+                "momentum_dampening_rate": 0,
+                "clipnorm": 0.0,
+                "clipvalue": 0.0
+            }
+        },
+        "learning_rate_scheduler": {
+            "name": "steplr",
+            "params": {
+                "step_size": 1,
+                "gamma": 0.98,
+                "last_epoch": -1
+            }
+        },
+        "loss": {
+            "name": "softmaxcrossentropy",
+            "params": {
+                "weight": null,
+                "batch_axis": 0,
+                "axis_to_sum_over": -1,
+                "label_as_categories": true,
+                "label_smoothing": false
+            }
+        }
+    },
+    "training": {
+        "settings": {
+            "display_progress_realtime": true,
+            "display_progress": true,
+            "save_intermediate_models": true,
+            "save_training_logs": true,
+            "intermediate_model_prefix": "intermediate_model_"
+        },
+        "outputs": {
+            "max_gpu_memory_usage": 1322,
+            "best_val_acc": "0.860008",
+            "best_val_acc_epoch_num": 6,
+            "epochs_completed": 10,
+            "training_time": "60m 59s",
+            "max_gpu_usage": "1322 Mb",
+            "log_val_acc_history": "/home/ubuntu/workspace/Task/gluon_resnet18_v1_train_all_layers/output/logs/val_acc_history.npy",
+            "log_val_loss_history": "/home/ubuntu/workspace/Task/gluon_resnet18_v1_train_all_layers/output/logs/val_loss_history.npy",
+            "log_train_acc_history": "/home/ubuntu/workspace/Task/gluon_resnet18_v1_train_all_layers/output/logs/train_acc_history.npy",
+            "log_train_loss_history": "/home/ubuntu/workspace/Task/gluon_resnet18_v1_train_all_layers/output/logs/train_loss_history.npy",
+            "log_val_acc_history_relative": "workspace/Task/gluon_resnet18_v1_train_all_layers/output/logs/val_acc_history.npy",
+            "log_val_loss_history_relative": "workspace/Task/gluon_resnet18_v1_train_all_layers/output/logs/val_loss_history.npy",
+            "log_train_acc_history_relative": "workspace/Task/gluon_resnet18_v1_train_all_layers/output/logs/train_acc_history.npy",
+            "log_train_loss_history_relative": "workspace/Task/gluon_resnet18_v1_train_all_layers/output/logs/train_loss_history.npy"
+        },
+        "status": true
+    },
+    "testing": {
+        "status": false,
+        "num_images": false,
+        "num_correct_predictions": false,
+        "percentage_accuracy": false,
+        "class_accuracy": false
+    },
+    "states": {
+        "eval_infer": false,
+        "resume_train": false,
+        "copy_from": false,
+        "pseudo_copy_from": false
+    },
+    "local": {
+        "projects_list": [],
+        "num_projects": false,
+        "experiments_list": [],
+        "num_experiments": false,
+        "project_experiment_list": [],
+        "transforms_train": [],
+        "transforms_val": [],
+        "transforms_test": [],
+        "normalize": false,
+        "mean_subtract": false,
+        "applied_train_tensor": false,
+        "applied_test_tensor": false,
+        "data_transforms": {},
+        "image_datasets": {},
+        "data_loaders": {},
+        "data_generators": {},
+        "model": false,
+        "custom_model": false,
+        "ctx": false,
+        "params_to_update": [],
+        "device": false,
+        "learning_rate_scheduler": false,
+        "optimizer": false,
+        "criterion": false
+    },
+    "visualization": {
+        "base": "/home/ubuntu/workspace/Task/gluon_resnet18_v1_train_all_layers/visualization/",
+        "kernels_dir": "/home/ubuntu/workspace/Task/gluon_resnet18_v1_train_all_layers/visualization/kernels/",
+        "feature_maps_dir": "/home/ubuntu/workspace/Task/gluon_resnet18_v1_train_all_layers/visualization/feature_maps/"
+    }
+}
